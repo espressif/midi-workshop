@@ -1,6 +1,6 @@
 /*
 This is an example of a Simple MIDI Instrument using an ESP32 with a native USB support stack (S2, S3,
-etc.) and VL53L0X ToF sensor.
+etc.) and VL53L0X ToF sensor with volume controll.
 */
 
 #if ARDUINO_USB_MODE
@@ -15,6 +15,7 @@ void loop() {}
 #include "USBMIDI.h"
 
 #define BUTTON_PIN 0
+#define VOLUME_PIN 7
 
 // static const uint8_t SDA = 8;
 // static const uint8_t SCL = 9;
@@ -59,6 +60,10 @@ void loop() {
     if(last_note != note && last_note != 0 || note == 0){
       MIDI.noteOff(last_note, 0);
     }
+
+    // Update volume
+    uint8_t volume = map(analogRead(VOLUME_PIN),0,4095,0,127);
+    MIDI.controlChange(7,volume);
   }
 }
 #endif /* ARDUINO_USB_MODE */
