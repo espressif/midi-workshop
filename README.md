@@ -39,3 +39,8 @@ Install via `Tools -> Manage libraries`.
 1. Select the according port in `Tools -> Port`
 1. ___Optional___: Set Core Debug Level to `Debug` in `Tools -> Core Debug Level`
 1. Connect the dev board to the PC with the second USB port as well
+
+## Useful links
+
+- [Arduino-esp32 repository](https://github.com/espressif/arduino-esp32)
+- [MIDI CC List for Continuous Controllers](https://anotherproducer.com/online-tools-for-musicians/midi-cc-list/)
