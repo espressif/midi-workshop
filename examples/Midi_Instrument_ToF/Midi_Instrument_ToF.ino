@@ -16,6 +16,9 @@ void loop() {}
 
 #define BUTTON_PIN 0
 
+// static const uint8_t SDA = 8;
+// static const uint8_t SCL = 9;
+
 Adafruit_VL53L0X lox = Adafruit_VL53L0X();
 USBMIDI MIDI;
 
